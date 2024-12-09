@@ -13,7 +13,10 @@ export const projectsTable = pgTable("projects", {
   name: varchar({ length: 255 }).notNull(),
   description: text(),
   created_at: timestamp().defaultNow().notNull(),
-});
+}, (table) => ({
+  nameIdx: index('project_name_idx').on(table.name),
+  uniqueName: unique('project_name').on(table.name)
+}));
 
 export const fileTypeEnum =  pgEnum('fileType', ['regular', 'directory']);
 
