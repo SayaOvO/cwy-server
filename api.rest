@@ -1,6 +1,9 @@
-POST http://localhost:3001/api/projects
+POST http://localhost:3001/api/files
 Content-Type: application/json
 
 {
-  "name": "react-app"
+  "name": "index.js",
+  "content": "console.log('hello world')",
+  "parentId": "7ff201ef-33bc-459b-8e1e-e1ffe04fa127",
+  "projectId": "98450cbc-9767-4945-8b34-8ae5e565caf4"
 }
