@@ -25,7 +25,6 @@ const server = createServer(app);
 const wsserver =new WebSocketServer({ server })
 
 wsserver.on("connection", (conn, req) => {
-  console.log(req.url?.slice(1).split("?")[0]);
   setupWSConnection(conn, req);
   conn.on('error', (error) => {
     console.log('connection error:', error);
@@ -41,11 +40,3 @@ const port = process.env.PORT || 3001;
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-
-
-
-
-
-
-
